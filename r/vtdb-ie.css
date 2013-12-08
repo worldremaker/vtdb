@@ -1,0 +1,13 @@
+/*
+ * crap hacks
+ */
+
+.character .image .tabs .perks,
+.character .image .tabs .karma,
+.character .image .tabs .kills
+{
+	background-image: url(../g/iecrap.gif), url(g/iecrap.gif);
+	background-repeat;
+	-ms-filter:"progid:DXImageTransform.Microsoft.Alpha(opacity=0)";
+	filter: alpha(opacity=0);
+}

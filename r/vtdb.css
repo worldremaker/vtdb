@@ -1,0 +1,572 @@
+html body {
+	background: #333;
+	color: #ffffff;
+	cursor: url(g/actarrow.cur),url(../g/actarrow.cur),default;
+}
+
+/* forum css starts here */
+
+a:link, a:visited {
+	color: #5da046; /*#A1A1A1;*/
+	text-decoration: none;
+	cursor: url(g/actarrow.cur),url(../g/actarrow.cur),default;
+}
+
+a:hover {
+	color: #e0e0e0;
+	text-decoration: underline;
+	cursor: url(g/actarrow.cur),url(../g/actarrow.cur),default;
+}
+
+a.nav, a.nav:link, a.nav:visited {
+	color: #aaa;
+	text-decoration: none;
+	font-size: 13px;
+}
+
+a.nav:hover {
+	color: white;
+	text-decoration: none;
+}
+
+a img {
+	border: 0;
+}
+
+table {
+	empty-cells: show;
+}
+
+/* By default (td, body..) use Tahoma in black. */
+td, th
+{
+	color: #cdcdcd;
+	font-size: 13px;
+	font-family: arial, helvetica, serif; /*tahoma, sans-serif;*/
+}
+
+textarea {
+	font-size: 9pt;
+	color: #000000;
+	font-family: tahoma, sans-serif;
+}
+
+.titlebg, tr.titlebg th, tr.titlebg td, .titlebg a:link, .titlebg a:visited, .titlebg2, tr.titlebg2 th, tr.titlebg2 td, .titlebg2 a:link, .titlebg2 a:visited {
+	color: white;
+	font-style: normal;
+	background-color: #161718;
+	border-bottom: 1px solid #111;
+}
+
+.titlebg a:hover, .titlebg2 a:hover
+{
+	color: #dfdfdf;
+}
+
+.windowbg {
+	background-color: #222;
+	
+}
+.windowbg2 {
+	background-color: #252525;
+}
+
+.bordercolor
+{	
+	background-color: #111;
+}
+
+/* forum css ends here */
+
+.character_name,.top {
+	padding-top: 10px;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+.character,.main {
+	position: fixed;
+	width: 80%;
+	max-width: 80%;
+	height: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	background: #333;
+}
+
+.character .image {
+	position: relative;
+	margin-left: auto;
+	margin-right: 10%;
+	width:640px;
+	max-width:100%;
+	height:480px;
+	max-height:100%;
+	background-repeat: no-repeat;
+	background: #333;
+}
+
+
+/* tests
+.character .image .infotext,
+.character .image .special,
+.character .image .xp,
+.character .image .life,
+.character .image .stats,
+.character .image .skills,
+.character .image .tabs,
+.character .image .infobox,
+.character .image .scroll,
+.unused
+{
+	border: 1px solid #ff0000;
+}
+
+.character .image .infotext span,
+.character .image .special span,
+.character .image .xp span,
+.character .image .life span,
+.character .image .stats span,
+.character .image .skills span,
+.character .image .tabs .perks,
+.character .image .infobox dt
+{
+	border: 1px solid #0000ff;
+}
+*/
+.character .image .infotext{
+	position:absolute;
+	left:345px;
+	top:320px;
+	width: 200px; /*280px;*/
+	height: 100px;
+	margin: 0px;
+	padding: 0px;
+	line-height: 10px;
+}
+
+.character .image .special {
+	position: absolute;
+	left: 10px;
+	top:  30px;
+	width: 160px;
+	height: 235px;
+}
+
+.character .image .special span {
+	position: absolute;
+	left: 0px;
+	width: 158px;
+	height: 33px;
+}
+
+.character .image .xp {
+	position: absolute;
+	left: 10px;
+	top: 269px;
+	width: 160px;
+	height: 50px;
+}
+
+.character .image .xp span {
+	position: absolute;
+	left: 0px;
+	width: 158px;
+	height: 12px;
+}
+
+.character .image .life {
+	position: absolute;
+	left: 175px;
+	top: 30px;
+	width: 155px;
+	height: 130px;
+}
+
+.character .image .life span {
+	position: absolute;
+	left: 0px;
+	width: 150px;
+	height: 14px;
+}
+
+.character .image .stats {
+	position: absolute;
+	left: 175px;
+	top: 165px;
+	width: 155px;
+	height: 154px;
+}
+
+.character .image .stats span {
+	position: absolute;
+	left: 0px;
+	width: 150px;
+	height: 13px;
+}
+
+.character .image .skills {
+	position: absolute;
+	left: 340px;
+	top: 2px;
+	width: 290px;
+	height: 255px;
+}
+
+.character .image .skills span{
+	position: absolute;
+	left: 0px;
+	width: 286px;
+	height: 11px;
+}
+
+
+.character .image .tabs{
+	position: absolute;
+	left: 10px;
+	top: 325px;
+	width: 315px;
+	height: 30px;
+}
+
+.character .image .tabs .perks,
+.character .image .tabs .karma,
+.character .image .tabs .kills
+{
+	position: absolute;
+	left:0px;
+	top: 0px;
+	width: 120px;
+	height: 28px;
+	display: block;
+	margin: 0;
+	border: 0;
+	padding: 0;
+}
+
+.character .image .tabs .karma
+{
+	left: 100px;
+}
+
+.character .image .tabs .kills
+{
+	left: 200px;
+}
+
+.character .image #scroll-perks,
+.character .image #scroll-karma,
+.character .image #scroll-kills
+{
+	position: absolute;
+	left: 315px;
+	top: 370px;
+	width: 12px;
+	height: 28px;
+	/*border: 1px solid #ff0000;*/
+}
+
+.character .image #scroll-perks p,
+.character .image #scroll-karma p,
+.character .image #scroll-kills p
+{
+	position: absolute;
+	margin: 0;
+	border: 0;
+	padding: 0;
+	width: 10px;
+	height: 13px;
+	/*border: 1px solid #0000ff;*/
+}
+
+.character .image #infobox #infobox-perks,
+.character .image #infobox #infobox-karma,
+.character .image #infobox #infobox-kills
+{
+	position: absolute;
+	left: 30px;
+	top: 360px;
+	width: 280px;
+	height: 105px;
+	line-height: 10px;
+	overflow: hidden;
+}
+/* not used
+.character .image #infobox #infobox-perks p,
+.character .image #infobox #infobox-karma p,
+.character .image #infobox #infobox-kills p
+{
+	position: relative;
+	margin: 0px;
+	border: 0px;
+	padding: 0px;
+	text-align: center;
+	height: 16px;
+}
+*/
+
+.character .image #infobox #infobox-perks span,
+.character .image #infobox #infobox-karma span,
+.character .image #infobox #infobox-kills span
+{
+	position: absolute;
+	left: 0px;
+	width: 280px;
+	line-height: 10px;
+	height: 16px;
+	margin-bottom: 5px;
+}
+
+.main .scrollme {
+	width: 95%;
+	max-width: 95%;
+	height: 83%;
+}
+
+
+.menu,.submenu{
+	top: 63px;
+	position: fixed;
+	width: 165px;
+	max-width: 20%;
+	height: 100%;
+	max-height: 100%;
+	left: 80%;
+	overflow: hidden;
+	text-align: center;
+	padding-top: 20px;
+	background-image: url(../g/opbase.gif), url(g/opbase.gif);
+	background-repeat: no-repeat;
+}
+
+.menu a,.submenu a{
+}
+
+.menu img,.submenu img{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	vertical-align: middle;
+}
+
+.submenu{
+	top: 325px;
+}
+
+.button1,.button2,.button3{
+	margin-top: -1px;
+	margin-bottom: 5px;
+	margin-left: 8px;
+	width: 150px;
+	max-width: 100%;
+	height: 30px;
+	max-height: 100%;
+	size: 10px;
+	display: block;
+	color: rgb(160,120,0);
+	background-repeat: no-repeat;
+	background-position: 100% 100%;
+	text-align: center;
+}
+
+.button1 {
+	background-image: url(../g/bmenu1.gif);
+}
+.button2 {
+	background-image: url(../g/bmenu2.gif);
+}
+.button3 {
+	background-image: url(../g/bmenu3.gif);
+}
+
+.saveback {
+	background: url(../g/wmdate.gif) no-repeat center;
+	padding-top: 8px;
+}
+
+.font1,.font2,.font3{
+	height: 19px;
+	width: 0px;
+	background-image: url(../g/font1.gif);
+	background-repeat: no-repeat;
+	display: inline-block;
+	/*border: 1px solid;*/ /* debug :P */
+	margin-left: -1px;
+	margin-right: -1px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-top: 10px;
+}
+
+.font2 {
+	background-image: url(../g/font2.gif);
+}
+
+.font1_a,.font2_a { background-position: -59px 1px; width: 18px;}
+.font1_b,.font2_b { background-position: -79px 1px; width: 17px;}
+.font1_c ,.font2_c { background-position: -97px 1px; width: 13px;}
+.font1_d ,.font2_d{ background-position: -112px 1px; width: 17px;}
+.font1_e ,.font2_e{ background-position: -130px 1px; width: 15px;}
+.font1_f ,.font2_f{ background-position: -147px 1px; width: 14px;}
+.font1_g ,.font2_g{ background-position: -163px 1px; width: 18px;}
+.font1_h ,.font2_h{ background-position: -181px 1px; width: 17px;}
+.font1_i ,.font2_i{ background-position: -198px 1px; width: 10px;}
+.font1_j ,.font2_j{ background-position: -208px 1px; width: 11px;}
+.font1_k ,.font2_k{ background-position: -218px 1px; width: 17px;}
+.font1_l ,.font2_l{ background-position: -237px 1px; width: 14px;}
+.font1_m ,.font2_m{ background-position: -252px 1px; width: 22px;}
+.font1_n ,.font2_n{ background-position: -275px 1px; width: 19px;}
+.font1_o ,.font2_o{ background-position: -295px 1px; width: 19px;}
+.font1_p ,.font2_p{ background-position: -315px 1px; width: 18px;}
+.font1_q ,.font2_q{ background-position: -334px 1px; width: 20px;}
+.font1_r ,.font2_r{ background-position: -356px 1px; width: 18px;}
+.font1_s ,.font2_s{ background-position: -377px 1px; width: 14px;}
+.font1_t ,.font2_t{ background-position: -395px 1px; width: 14px;}
+.font1_u ,.font2_u{ background-position: -411px 1px; width: 18px;}
+.font1_v ,.font2_v{ background-position: -431px 1px; width: 17px;}
+.font1_w ,.font2_w{ background-position: -452px 1px; width: 24px;}
+.font1_x ,.font2_x{ background-position: -480px 1px; width: 17px;}
+.font1_y ,.font2_y{ background-position: -500px 1px; width: 16px;}
+.font1_z ,.font2_z{ background-position: -518px 1px; width: 16px;}
+.font1_0,.font2_0{background-position: -207px -31px; width: 18px;}
+.font1_1,.font2_1{background-position: -228px -32px; width: 12px;}
+.font1_2,.font2_2{background-position: -242px -32px; width: 14px;}
+.font1_3,.font2_3{background-position: -260px -32px; width: 15px;}
+.font1_4,.font2_4{background-position: -278px -32px; width: 16px;}
+.font1_5,.font2_5{background-position: -297px -32px; width: 15px;}
+.font1_6,.font2_6{background-position: -314px -32px; width: 16px;}
+.font1_7,.font2_7{background-position: -335px -32px; width: 13px;}
+.font1_8,.font2_8{background-position: -351px -32px; width: 16px;}
+.font1_9,.font2_9{background-position: -369px -32px; width: 17px;}
+
+.font1_sp1,.font2_sp1{background-position: 0px -65px; width: 9px;}
+.font1_sp2,.font2_sp2{background-position: -14px -65px; width: 11px;}
+.font1_sp3,.font2_sp3{background-position: -28px -65px; width: 25px;}
+.font1_sp4,.font2_sp4{background-position: -55px -65px; width: 14px;}
+.font1_sp5,.font2_sp5{background-position: -68px -65px; width: 11px;}
+.font1_sp6,.font2_sp6{background-position: -78px -65px; width: 11px;}
+.font1_sp7,.font2_sp7{background-position: -90px -65px; width: 9px; height: 23px;}
+.font1_sp8,.font2_sp8{background-position: -98px -65px; width: 9px;}
+.font1_sp9,.font2_sp9{background-position: -107px -65px; width: 9px; height: 23px;}
+.font1_sp10,.font2_sp10{background-position: -115px -65px; width: 8px;}
+.font1_sp10{padding-right:1px;}
+.font1_sp11,.font2_sp11{background-position: -124px -65px; width: 11px;}
+.font1_sp12,.font2_sp12{background-position: -136px -65px; width: 28px;}
+.font1_sp13,.font2_sp13{background-position: -167px -65px; width: 9px;}
+.font1_sp14,.font2_sp14{background-position: -177px -65px; width: 37px; height: 24px;}
+.font1_sp15,.font2_sp15{background-position: -215px -65px; width: 28px;}
+.font1_sp16,.font2_sp16{background-position: -243px -65px; width: 17px; height: 22px;}
+.font1_sp17,.font2_sp17{background-position: -261px -65px; width: 26px;}
+.font1_sp18,.font2_sp18{background-position: -293px -65px; width: 25px;}
+.font1_sp19,.font2_sp19{background-position: -324px -65px; width: 21px;}
+.font1_sp20,.font2_sp20{background-position: -346px -65px; width: 16px;}
+.font1_sp21,.font2_sp21{background-position: -363px -66px; width: 11px; height: 21px;}
+.font1_sp21{padding-right:1px;}
+.font1_sp22,.font2_sp22{background-position: -374px -66px; width: 11px; height: 21px;}
+.font1_sp23,.font2_sp23{background-position: -384px -73px; width: 22px;}
+.font1_sp24,.font2_sp24{background-position: -409px -66px; width: 23px;}
+.font1_sp25,.font2_sp25{background-position: -442px -65px; width: 7px;}
+.font1_sp26,.font2_sp26{background-position: -457px -66px; width: 16px; height:25px;}
+.font1_sp27,.font2_sp27{background-position: -476px -66px; width: 15px; height:25px;}
+.font1_sp28,.font2_sp28{background-position: -494px -68px; width: 9px;}
+.font1_sp29,.font2_sp29{background-position: -503px -65px; width: 17px;}
+.font1_sp30,.font2_sp30{background-position: -523px -65px; width: 25px;}
+.font1_sp31,.font2_sp31{background-position: -555px -65px; width: 25px;}
+.font1_sp32,.font2_sp32{background-position: -583px -65px; width: 13px;}
+
+.font3{
+	height: 12px;
+	background-image: url(../g/font3.gif);
+	/*border: 1px solid;*/ /* debug :P */
+	margin-left: -1px;
+	margin-right: -1px;
+	margin-top: 2px;
+	margin-bottom: 2px;
+	padding-top: 10px;
+}
+
+.font3_a{background-position: -40px 1px; width: 14px;}
+.font3_b{background-position: -54px 1px; width: 13px;}
+.font3_c{background-position: -67px 1px; width: 11px;}
+.font3_d{background-position: -79px 1px; width: 12px;}
+.font3_e{background-position: -92px 1px; width: 11px;}
+.font3_f{background-position: -104px 1px; width: 10px;}
+.font3_g{background-position: -116px 1px; width: 13px;}
+.font3_h{background-position: -129px 1px; width: 12px;}
+.font3_i{background-position: -142px 1px; width: 6px;}
+.font3_j{background-position: -149px 1px; width: 7px;}
+.font3_k{background-position: -156px 1px; width: 13px;}
+.font3_l{background-position: -170px 1px; width: 10px;}
+.font3_m{background-position: -181px 1px; width: 16px;}
+.font3_n{background-position: -198px 1px; width: 13px;}
+.font3_o{background-position: -212px 1px; width: 14px;}
+.font3_p{background-position: -226px 1px; width: 14px;}
+.font3_q{background-position: -240px 1px; width: 15px;}
+.font3_r{background-position: -256px 1px; width: 14px;}
+.font3_s{background-position: -272px 1px; width: 11px;}
+.font3_t{background-position: -284px 1px; width: 12px;}
+.font3_u{background-position: -296px 1px; width: 14px;}
+.font3_v{background-position: -310px 1px; width: 14px;}
+.font3_w{background-position: -326px 1px; width: 17px;}
+.font3_x{background-position: -345px 1px; width: 14px;}
+.font3_y{background-position: -360px 1px; width: 13px;}
+.font3_z{background-position: -374px 1px; width: 12px;}
+.font3_0{background-position: -148px -22px; width: 13px;}
+.font3_1{background-position: -162px -23px; width: 11px;}
+.font3_2{background-position: -172px -23px; width: 12px;}
+.font3_3{background-position: -185px -23px; width: 13px;}
+.font3_4{background-position: -198px -23px; width: 13px;}
+.font3_5{background-position: -213px -23px; width: 12px;}
+.font3_6{background-position: -226px -23px; width: 12px;}
+.font3_7{background-position: -240px -23px; width: 11px;}
+.font3_8{background-position: -252px -23px; width: 13px;}
+.font3_9{background-position: -265px -23px; width: 13px;}
+
+@font-face {
+    font-family: 'JH_FalloutRegular';
+    src:  url('jh_fallout-webfont.eot');
+	src:  local( ' ' ), url('r/jh_fallout-webfont.woff') format('woff'), url('jh_fallout-webfont.woff') format('woff'),
+		 url('r/jh_fallout-webfont.ttf') format('truetype'), url('jh_fallout-webfont.ttf') format('truetype');
+    font-weight: small;
+    font-style: lighter;
+}
+
+.font_green, .font_green_infobox {
+	font-family: 'JH_FalloutRegular';
+	font-size: 9px;
+	color: #00ff00;
+}
+
+.font_green_infobox {
+	font-size: 8px;
+	size: 8px;
+}
+
+.font_black {
+	font-family: 'JH_FalloutRegular';
+	font-size: 8px;
+	color: #230000;
+	padding-bottom: 0px;
+	padding-top: 0px;
+}
+
+
+.month {
+	margin-left: left;
+	width: 29px;
+	height: 14px;
+	background-image: url(../g/months.gif);
+	background-repeat: no-repeat;
+	display: inline-block;
+}
+.month1 { background-position: 0px 0px; }
+.month2 { background-position: 0px -16px; }
+.month3 { background-position: 0px -31px; }
+.month4 { background-position: 0px -46px; }
+.month5 { background-position: 0px -60px; }
+.month6 { background-position: 0px -75px; }
+.month7 { background-position: 0px -90px; }
+.month8 { background-position: 0px -105px; }
+.month9 { background-position: 0px -120px; }
+.month10 { background-position: 0px -135px; }
+.month11 { background-position: 0px -150px; }
+.month12 { background-position: 0px -165px; }

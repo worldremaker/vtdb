@@ -1,0 +1,101 @@
+#!/usr/bin/perl
+##
+#
+# usage: vtdb-lang [/path/to/server/text/LANG]
+#
+##
+
+use strict;
+use warnings;
+
+use FOnline::MSG;
+
+my $msgdir = shift || '../../..//2238/trunk/text/engl';
+my $GAME = 'FOGAME.MSG';
+
+sub array
+{
+    my $name = shift || die( "array: !name" );
+    my $src = shift || die( "array: !src" );
+    my @setup = @_;
+    my @setup2;
+
+    my @result;
+    my %MSG = srv_LoadMsgFile( "$msgdir/$src" );
+
+    foreach my $conf ( @setup )
+    {
+	my( $start, $endstep ) = split( '-', $conf, 2 );
+	if( !$endstep )
+	{
+	    if( defined( $MSG{$start} ))
+	    {
+		my $msg = $MSG{$start};
+		$msg =~ s!\'!\\\'!g;
+		$msg =~ s!\"!\\\"!g;
+		push( @result, $msg );
+		push( @setup2, $start );
+	    }
+	    else
+	    {
+		push( @result, "0 /* $start */" );
+	    };
+	}
+	else
+	{
+	    my( $end, $step ) = split( ':', $endstep );
+	    die( "array: !end" ) if( !$end );
+	    $step = 1 if( !$step );
+	    for( my $id = $start; $id <= $end; $id += $step )
+	    {
+		if( defined( $MSG{$id} ))
+		{
+		    my $msg = $MSG{$id};
+		    $msg =~ s!\'!\\\'!g;
+		    $msg =~ s!\"!\\\"!g;
+		    push( @result, $msg );
+		};
+	    };
+	    push( @setup2, sprintf( "$start - $end%s", $step == 1 ? '' : " (step $step)" ));
+	};
+    };
+    printf( "# %s :: %s\n",
+	$src, join( ', ', @setup2 ));
+    printf( "\$lang_${name} = array(\n\t\"%s\"\n);\n",
+	join( "\",\n\t\"", @result ));
+    print( "\n" );
+};
+
+my @list;
+print( "<?php\n\n/* Generated automagically, see i/vtdb-lang */\n\n" );
+array( 'special_short', $GAME, '400-406' );
+array( 'special_long', $GAME, '100001-100061:10' );
+array( 'special_long_descr', $GAME, '100002-100062:10' );
+array( 'special_rating', $GAME, '2301-2310' );
+array( 'xp', $GAME, '4113-4115' );
+array( 'xp_descr', $GAME, '4053-4054', 4051 );
+array( 'life', $GAME, 407, '443-444', '105021-105061:10' );
+array( 'life_descr', $GAME, 100072, '105002-105062:10' );
+array( 'stats',       $GAME, 100093, 100083, 100113, 100103, 100233, 100313, 100303, 100123, 100133, 100143 );
+array( 'stats_descr', $GAME, 100092, 100082, 100112, 100102, 100232, 100312, 100302, 100122, 100132, 100142 );
+array( 'skills', $GAME, '102001-102171:10' );
+array( 'skills_descr', $GAME, 102002, 102012, 102022, 102032, 102042, 102052, 102062, 102072, 102082, 102092, 102102, 102112, 102122, 102132, 102142, 102152, 102162, 102172 );
+array( 'tabs_descr', $GAME, 4057, 4056, 4058 );
+array( 'traits', $GAME, 4011, '105501-105661:10' );
+array( 'traits_descr', $GAME, 4061, '105502-105662:10' );
+array( 'perks', $GAME, 4007, '103001-104391:10' );
+array( 'perks_descr', $GAME, 4057, '103002-104392:10' );
+array( 'karma', $GAME, '104801-104971:10' );
+array( 'karma', $GAME, '104802-104972:10' );
+
+#array( 'reputation', $GAME, '106021-106911:10' );
+#array( 'reputation', $GAME, 
+
+array( 'addictions', $GAME, 104701, 104711, 104721, 104731, 104741, 104751, 104761 );
+array( 'addictions_descr', $GAME, 104702, 104712, 104722, 104732, 104742, 104752, 104762 );
+
+array( 'kills', $GAME, '102601-102821:10' );
+array( 'kills_descr', $GAME, '102602-102822:10' );
+print( "?>" );
+
+1;

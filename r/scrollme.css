@@ -1,0 +1,33 @@
+/* scrollme */
+
+.scrollbarUp {
+	width: 12px;
+	height: 12px;
+	background: url(../g/s/up.gif);
+	cursor: pointer;
+}
+.scrollbarDn {
+	width: 12px;
+	height: 12px;
+	background: url(../g/s/dn.gif);
+	cursor: pointer;
+}
+.scrollbarBg {
+	width: 12px;
+	background: url(../g/s/bg.gif);;
+}
+.scrollbarScroll {
+	width: 12px;
+	background: url(../g/s/scroll.gif);
+	cursor: pointer;
+}
+.scrollbarScrollTop {
+	width: 12px;
+	height: 8px;
+	background: url(../g/s/top.gif);
+}
+.scrollbarScrollBtm {
+	width: 12px;
+	height: 8px;
+	background: url(../g/s/btm.gif);
+}
