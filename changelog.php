@@ -24,6 +24,9 @@ $changelog = array(
 		'character position',
 	),
 	*/
+	'0.3u1 (Anne) update1' => array(
+		'russian nicknames support (initial state)',
+	),
 	'0.3 (Anne)' => array(
 		'savefile v2: added traits, perks, karma, reputation, kills, [placeholder: position]',
 		//'russian nicks support',

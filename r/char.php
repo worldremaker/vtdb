@@ -1,5 +1,7 @@
 <?php
 
+header('Content-Type: text/html; charset=UTF-8');
+
 include_once( 'setup.php' );
 
 // check if setup array have all keys
@@ -64,6 +66,7 @@ function char_load( $vtdb_dir, $id )
 		};
 
 		$file = file_get_contents( "$vtdb_dir/$id.vtdb" );
+		$file = mb_convert_encoding($file, 'HTML-ENTITIES', "UTF-8");
 		$match = 0; preg_match( '/@version = ([0-9]+);/', $file, $match );
 		if( !$match[1] || empty($match[1]) )
 		{
@@ -116,7 +119,7 @@ function char_load( $vtdb_dir, $id )
 	// load base keys first; if something is missing - scream
 	if( $char['version'] == 1 )
 	{
-		$char = char_load_get( $char, 'name', '/\$char_name = "(.*)";/', $file );
+		$char = char_load_get( $char, 'name', '/(*UTF8)\$char_name = "(.*)";/', $file );
 		$char = char_load_get( $char, 'gender', '/\$char_gender = ([\-0-9]+);/', $file ); // support GM tricks
 		$char = char_load_get( $char, 'age', '/\$char_age = ([\-0-9]+);/', $file ); // support GM tricks
 	}

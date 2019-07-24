@@ -52,6 +52,6 @@ $dirs = array(
 
 $lang = 'en'; include( $dirs['lang'] . "lang.$lang.php" );
 
-$version = '0.3 (Anne)';
+$version = '0.3u1 (Anne) update1';
 
 ?>

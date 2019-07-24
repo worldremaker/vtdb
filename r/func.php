@@ -2,9 +2,9 @@
 
 // CLAMP()
 //
-function CLAMP($this,$low,$high) // from FOServ
+function CLAMP($that,$low,$high) // from FOServ
 {
-	return( ((($this)>($high))?($high):((($this)<($low))?($low):($this))) );
+	return( ((($that)>($high))?($high):((($that)<($low))?($low):($that))) );
 };
 
 // font()
@@ -28,8 +28,25 @@ function string2font($font,$text)
 
 	$font = strtolower("font$font");
 	$text = strtolower($text);
-	
-	$array = preg_split('//', $text, -1, PREG_SPLIT_NO_EMPTY); # :/
+
+	$tempArray = preg_split('//', $text, -1, PREG_SPLIT_NO_EMPTY);
+	// Look for russian character letters in $tempArray
+
+	if($tempArray[0] == '&' && $tempArray[1] == '#') {
+		$tempCount = 0;
+		while($tempCount < count($tempArray)) {
+			// When there's "space"
+			if($tempArray[$tempCount] == ' ') {
+				$array[] = ' ';
+				$tempCount++;
+			} else {
+				$array[] = $tempArray[$tempCount + 2].$tempArray[$tempCount + 3].$tempArray[$tempCount + 4].$tempArray[$tempCount + 5];
+				$tempCount = $tempCount + 7;
+			}
+		}
+	} else {
+		$array = preg_split('//', $text, -1, PREG_SPLIT_NO_EMPTY); # :/
+	}
 	foreach( $array	 as $letter )
 	{
 /*		if( $letter == ' ' )
@@ -124,8 +141,182 @@ function string2font($font,$text)
 				font( $font, 'sp32' ); break;
 			// alphanumeric (1rd/2nd line)
 			default:
-				if( ctype_alnum( $letter ))
+				if(strlen($letter) == 4){ // Russian2European generator
+					//font( $font, $letter );
+					if($letter == '1072'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'a' );
+						}
+					}
+					if($letter == '1073'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'b' );
+						}
+					}
+					if($letter == '1074'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'v' );
+						}
+					}
+					if($letter == '1075'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'g' );
+						}
+					}
+					if($letter == '1076'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'd' );
+						}
+					}
+					if($letter == '1077'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'y' );
+							font( $font, 'e' );
+						}
+					}
+					if($letter == '1078'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'z' );
+							font( $font, 'h' );
+						}
+					}
+					if($letter == '1079'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'z' );
+						}
+					}
+					if($letter == '1080'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'i' );
+						}
+					}
+					if($letter == '1081'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'y' );
+						}
+					}
+					if($letter == '1082'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'k' );
+						}
+					}
+					if($letter == '1083'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'l' );
+						}
+					}
+					if($letter == '1084'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'm' );
+						}
+					}
+					if($letter == '1085'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'n' );
+						}
+					}
+					if($letter == '1086'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'o' );
+						}
+					}
+					if($letter == '1087'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'p' );
+						}
+					}
+					if($letter == '1088'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'r' );
+						}
+					}
+					if($letter == '1089'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 's' );
+						}
+					}
+					if($letter == '1090'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 't' );
+						}
+					}
+					if($letter == '1091'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'u' );
+						}
+					}
+					if($letter == '1092'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'f' );
+						}
+					}
+					if($letter == '1093'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'k' );
+							font( $font, 'h' );
+						}
+					}
+					if($letter == '1094'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 't' );
+							font( $font, 's' );
+						}
+					}
+					if($letter == '1095'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'c' );
+							font( $font, 'h' );
+						}
+					}
+					if($letter == '1096'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 's' );
+							font( $font, 'h' );
+						}
+					}
+					if($letter == '1097'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 's' );
+							font( $font, 'h' );
+							font( $font, 'c' );
+							font( $font, 'h' );
+						}
+					}
+					if($letter == '1098'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'sp29' );
+						}
+					}
+					if($letter == '1099'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'y' );
+						}
+					}
+					if($letter == '1100'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'sp4' );
+						}
+					}
+					if($letter == '1101'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'e' );
+						}
+					}
+					if($letter == '1102'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'y' );
+							font( $font, 'u' );
+						}
+					}
+					if($letter == '1103'){
+						for($i=0; $i<1; $i++) {
+							font( $font, 'y' );
+							font( $font, 'a' );
+						}
+					}
+				}elseif( ctype_alnum( $letter )){ // alphanumeric
 					font( $font, $letter );
+				}
 				break;
 		};
 	};

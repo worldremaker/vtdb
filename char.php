@@ -49,6 +49,8 @@ function char_image($vtdb_dir,$id,$dna_dir)
 			// time to do some magic!
 			$generated = microtime(true);
 			$image = gd_imagecreate( $filename );
+			
+			$char['name'] = RUStoEU($char['name']); // Convert russian nickname to european if needed
 
 			gd_setinfo( $image, $char['id'], $char['name'], $char['gender'], $char['age'] );
 			
@@ -89,6 +91,132 @@ function char_image($vtdb_dir,$id,$dna_dir)
 			return( $image );
 	};
 };
+
+function RUStoEU($rus_name) { // Convert Russian2European character letters, in nicknames...
+			$tempArray = preg_split('//', $rus_name, -1, PREG_SPLIT_NO_EMPTY);
+			// View of whole array after preg_split...
+			//print_r($tempArray);
+	
+			// Check for russian character letter in nickname...
+			if($tempArray[0] == '&' && $tempArray[1] == '#') {
+				// Prepare variables...
+				$tempCount = 0;
+				$newName = '';
+				$newLetter = '';
+				$newCode = '';
+				while($tempCount < count($tempArray)) {
+					//Kiedy jest spacja
+					if($tempArray[$tempCount] == ' ') {
+						$newLetter = ' ';
+						$tempCount++;
+					} else {
+						$newCode = $tempArray[$tempCount + 2].$tempArray[$tempCount + 3].$tempArray[$tempCount + 4].$tempArray[$tempCount + 5];
+						$tempCount = $tempCount + 7;
+						
+						if($newCode == '1072'){
+							$newLetter = 'a';
+						}
+						if($newCode == '1073'){
+							$newLetter = 'b';
+						}
+						if($newCode == '1074'){
+							$newLetter = 'v';
+						}
+						if($newCode == '1075'){
+							$newLetter = 'g';
+						}
+						if($newCode == '1076'){
+							$newLetter = 'd';
+						}
+						if($newCode == '1077'){
+							$newLetter = 'ye';
+						}
+						if($newCode == '1078'){
+							$newLetter = 'zh';
+						}
+						if($newCode == '1079'){
+							$newLetter = 'z';
+						}
+						if($newCode == '1080'){
+							$newLetter = 'i';
+						}
+						if($newCode == '1081'){
+							$newLetter = 'y';
+						}
+						if($newCode == '1082'){
+							$newLetter = 'k';
+						}
+						if($newCode == '1083'){
+							$newLetter = 'l';
+						}
+						if($newCode == '1084'){
+							$newLetter = 'm';
+						}
+						if($newCode == '1085'){
+							$newLetter = 'n';
+						}
+						if($newCode == '1086'){
+							$newLetter = 'o';
+						}
+						if($newCode == '1087'){
+							$newLetter = 'p';
+						}
+						if($newCode == '1088'){
+							$newLetter = 'r';
+						}
+						if($newCode == '1089'){
+							$newLetter = 's';
+						}
+						if($newCode == '1090'){
+							$newLetter = 't';
+						}
+						if($newCode == '1091'){
+							$newLetter = 'u';
+						}
+						if($newCode == '1092'){
+							$newLetter = 'f';
+						}
+						if($newCode == '1093'){
+							$newLetter = 'kh';
+						}
+						if($newCode == '1094'){
+							$newLetter = 'ts';
+						}
+						if($newCode == '1095'){
+							$newLetter = 'ch';
+						}
+						if($newCode == '1096'){
+							$newLetter = 'sh';
+						}
+						if($newCode == '1097'){
+							$newLetter = 'shch';
+						}
+						if($newCode == '1098'){
+							$newLetter = '"';
+						}
+						if($newCode == '1099'){
+							$newLetter = 'y';
+						}
+						if($newCode == '1100'){
+							$newLetter = '\\';
+						}
+						if($newCode == '1101'){
+							$newLetter = 'e';
+						}
+						if($newCode == '1102'){
+							$newLetter = 'yu';
+						}
+						if($newCode == '1103'){
+						$newLetter = 'ya';
+						}
+					
+					}				
+				$newName = $newName.$newLetter;
+				}
+				$rus_name = $newName;
+			}
+	return $rus_name;
+}
 
 $id = $_SERVER['QUERY_STRING'];	
 if( !$id || $id == "0" )
@@ -136,6 +264,7 @@ else if( !ctype_digit( $id ))
 	if( $sig && ctype_digit( $sig ))
 	{
 		$char = char_load( $dirs['db'], $sig );
+		$char['name'] = RUStoEU($char['name']); // Convert russian nickname to european if needed
 		if( $char && $char['xp'] )
 		{
 			$type = "1"; if( array_key_exists( 't', $_GET )) $type = $_GET['t'];
