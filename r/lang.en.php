@@ -182,7 +182,7 @@ $lang_traits = array(
 	"Good Natured",
 	"Chem Reliant",
 	"Chem Resistant",
-	"Sex Appeal",
+	"Bonehead",
 	"Skilled",
 	"Loner",
 	"Gifted"
@@ -204,7 +204,7 @@ $lang_traits_descr = array(
 	"You studied less-combative skills as you were growing up.  Your combat skills start at a lower level, but First Aid, Doctor, Speech and Barter are substantially improved.",
 	"You are more easily addicted to chems.  Your chance to be addicted by chem use is twice normal, but you recover faster from their ill effects.",
 	"Chems only affect you half as long as normal, but your chance to be addicted is also only 50% of normal.",
-	"You\'ve got the \"right\" stuff.  Members of the opposite sex are attracted to you, but those of the same sex tend to become quite jealous.",
+	"A thicker than average cranium means you can shrug off hits to the head that would floor others.  Unfortunatly that doesn't leave much room up there.",
 	"Since you spent more time improving your skills than a normal person, you gain 5 additional skill points per experience level. The tradeoff is that you do not gain as many extra abilities. You gain a perk every four levels.",
 	"You appreciate the nature more than company of others. You gain 10% more experience, but you can\'t have any followers.",
 	"You have more innate abilities than most, so you have not spent as much time honing your skills.  Your primary statistics are each +1, but you lose -10% on all skills to start, and receive 5 less skill points per level."
