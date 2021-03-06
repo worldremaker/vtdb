@@ -168,8 +168,8 @@ function gen_submenu($type,$options=0)
 	{
 		echo( $start );
 		//button( "/${top}manual.php", "MANUAL" );
-		button( "http://fonline2238.net/forum/index.php?topic=12717.msg104445#msg104445", 'GENERAL INFO' );
-		button( "http://fonline2238.net/forum/index.php?topic=12937.msg104446#msg104446", 'INI SYNTAX' );
+		button( "https://fodev.net/forum/index.php?topic=12717.msg104445#msg104445", 'GENERAL INFO' );
+		//button( "http://fonline2238.net/forum/index.php?topic=12937.msg104446#msg104446", 'INI SYNTAX' );
 		echo( "<br />\n" );
 		button( "/${top}changelog.php", 'CHANGELOG' );
 		echo( $end );
