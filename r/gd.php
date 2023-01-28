@@ -292,7 +292,8 @@ function gd_charbg($f_result,$bg_special,$bg_xp,$bg_life,$bg_stats,$bg_skills,$b
 	*/
 	
 	$info = "Vault-Tec DB, v$version
-by WHINE Team (update1 by worldremaker)";
+by WHINE Team, update2 by worldremaker,
+for FOnline: Aftertimes";
 	$info = preg_split( '/\n/', $info, -1, PREG_SPLIT_NO_EMPTY); # :/
 	$y = 285;//310;
 	foreach( $info as $line )
@@ -300,7 +301,7 @@ by WHINE Team (update1 by worldremaker)";
 		gd_addtext( $image, 350, $y, 'black', $line );
 		$y += 10;
 	};
-	gd_addtext( $image, 530, 438, 'black', "fonline2238.net" );
+	gd_addtext( $image, 490, 438, 'black', "fonline-aftertimes.net" );
 
 	imagedestroy( $hidden );
 	imagepng( $image, $f_result );

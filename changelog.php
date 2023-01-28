@@ -24,8 +24,12 @@ $changelog = array(
 		'character position',
 	),
 	*/
+	'0.3u2 (Anne) update2' => array(
+		'updated stats with their descriptions',
+		'dedicated for FOnline: Aftertimes',
+	),
 	'0.3u1 (Anne) update1' => array(
-		'russian nicknames support (initial state)',
+		'russian nicks support (initial state)',
 	),
 	'0.3 (Anne)' => array(
 		'savefile v2: added traits, perks, karma, reputation, kills, [placeholder: position]',

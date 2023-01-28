@@ -4,7 +4,7 @@
 // home
 // 
 //
-$home = 'fonline2238.net';
+$home = 'fonline-aftertimes.net';
 
 //
 // Dirs configuration; remember to add '/' at end!
@@ -12,7 +12,7 @@ $home = 'fonline2238.net';
 $dirs = array(
 	// home
 	// path to main directory, leave empty if using root dir
-	'home' => 'vtdb/',
+	'home' => './',
 
 	// db
 	// characters files (if changed, modify online_stats.cpp too)
@@ -52,6 +52,6 @@ $dirs = array(
 
 $lang = 'en'; include( $dirs['lang'] . "lang.$lang.php" );
 
-$version = '0.3u1 (Anne) update1';
+$version = '0.3u2s (Anne)';
 
 ?>

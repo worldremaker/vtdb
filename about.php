@@ -21,7 +21,7 @@ echo( "</div>\n" );
 echo( "<div class='main'>\n" );
 
 echo( "<span class='font_green'>
-Some very long and boring text <a href='http://fo2238.fodev.net/wiki/Soon'>should be</a> here.
+This Vault-Tec DataBase shows current stats of player's characters. Now it's underconstruction. Stay tuned.
 </span>
 </div>\n" );
 
